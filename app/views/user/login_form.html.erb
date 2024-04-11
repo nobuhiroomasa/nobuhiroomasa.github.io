@@ -1,0 +1,13 @@
+<%=form_tag(:container => "user", :action => "login") do %>
+  <% flash.each do |message_type, message| %>
+    <li><%= message %></li>
+  <% end %>
+  <div class="user_name_email">
+  <p>アカウント名</p>
+    <input name="name" value="">
+    <p>メールアドレス</p>
+    <input name="email" value="">
+    
+    <input type="submit" value="ログイン">
+   </div>
+    <%end%>

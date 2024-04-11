@@ -1,0 +1,12 @@
+<div class="choice-Title">
+<%= form_tag(:container => "home", :action=>"decision") do%>
+ <input  type="hidden" value="1" name="one">
+ <input type="submit" value="<%=@post.content%>" name="" class="example">
+<%end%>
+
+<%= form_tag(:container => "home", :action=>"decision") do%>
+ <input  type="hidden" value="2" name="one">
+ <input type="submit" value="<%=@post.post2%>" class="example">
+<%end%>
+</div>
+<!--<%=@post.content%> name="one"-->

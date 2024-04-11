@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body style="
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  ">
+  <header>
+    <div class="header">
+      
+
+      <%if @current_user_choice%>
+        <div><%=@current_user_choice.choice_id%></div>
+      <%end%>
+      <% if @current_user%>
+      <div><%=@current_user.name%></div>
+      <ul>
+          <li class="header-logo"><%=link_to("投稿","/")%></li>
+          <li><%=link_to("ログアウト","/logout")%></li>
+           
+           <%else%>
+           <li>
+           <%=link_to("新規登録","/loginew")%>
+           </li>
+
+           <li><%=link_to("ログイン","/login")%></li>
+           <% flash.each do |message_type, message| %>
+            <li><%= message %></li>
+            <% end %>
+         </ul>
+         <%end%>
+   </div>
+</header>
+    <%= yield %>
+  <footer style="
+
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  ">
+    <ul class="footer-menus">
+      <li>説明</li>
+    </ul>
+  </footer>
+  </body>
+
+</html>

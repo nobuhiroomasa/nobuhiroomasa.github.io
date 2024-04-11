@@ -1,0 +1,64 @@
+<div class="main_posts-show">
+  <div class="container">
+    </div>
+    
+      <div class="posts-show-item">
+      <div class="posts-show-Title">
+      <p>
+       <%="#{@post.content}"+"#{@post.post2}" %>
+       <%=@post.user_name%>
+      </p>
+      <p>
+       <%=@post.overview%>
+      </p>
+      </div>
+
+      
+      <div class="post-time">
+        <!-- @postのcreated_atカラムのデータを表示してください -->
+        <p><%=@post.created_at %></p>
+      </div>
+    </div>
+      
+  
+  　
+  <% @books.each do |book| %>
+   <%if @post.id == book.posts_id && book.user_choice ==1%>
+      <div class="posts-index-one">
+        <!-- post.contentを使って書き換えてください -->
+         <p><%= book.content%></p>
+         
+         <%=link_to("消去","/#{@post.id}/#{book.id}/destroy", {method: "post"})%>
+         </div>
+      <%end%>
+    
+    <div class="posts-index2">
+    <%if @post.id == book.posts_id && book.user_choice ==2%>
+    <div class="posts-index-two">
+        <!-- post.contentを使って書き換えてください -->
+         <p><%= book.content%></p> 
+     </div>
+     <%=link_to("消去","/#{@post.id}/#{book.id}/destroy", {method: "post"})%>
+     <%end%>
+     </div>
+    
+    <%end%>
+
+  
+
+
+  <div class="form">
+      <%= form_tag( :container => "home", :action => "save") do %>
+        <div class="form-body">
+          <textarea name="content">
+          
+          </textarea>
+          
+          <input type="submit" value="投稿" >
+        </div>
+      </div>
+    
+     
+    <!-- end を追加してください -->
+    <%end%>
+</div>

@@ -1,0 +1,15 @@
+current directory: /Users/oomasanobuhiro/tweet_app/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/oomasanobuhiro/.rbenv/versions/2.6.0/bin/ruby -I /Users/oomasanobuhiro/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20210524-18867-v1qohq.rb extconf.rb
+creating Makefile
+
+current directory: /Users/oomasanobuhiro/tweet_app/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/oomasanobuhiro/tweet_app/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/oomasanobuhiro/tweet_app/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20210524-18867-a3lj8e/skiptrace/internal

@@ -1,0 +1,77 @@
+
+<div class="mig">
+<div class="main">
+ <div class="top-mein">
+ <h1></h1>
+ </div>
+</div>
+
+<div class="main-top-main">
+  <div class="top-message">
+    <h2></h2>
+    <p></p>
+  </div>
+  <%= javascript_include_tag "/packs/test.js" %>
+  <p>jQuery稼働テスト(未稼働)</p>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $("p").text("jQuery稼働テスト(稼働中)");
+  });
+</script>
+
+</div>
+
+
+<div class="botan">
+    <%= form_tag( :container => "home", :action => "create") do %>
+      <div class="form">
+        <div class="form-body">
+          <input tyoe="text" name="content" size="10" class="in1" style="text-align: center;">
+          <input name="post2" size="10" class="in2" style="text-align: center;">
+          <div class="overview">
+            <textarea name="overview" size="30" style="width: 300px;"></textarea >
+          </div>
+          
+          <input type="submit" value="投稿" class="toukou">
+          
+        </div>
+      </div>
+    
+     
+    <!-- end を追加してください -->
+    <%end%>
+</div>
+</div>
+
+<div class="scroll">
+  <span>
+    <div id="top_content">
+      <% @posts.each do |post| %>
+        <div class="posts-index-item">
+        <!-- post.contentを使って書き換えてください -->
+          <%=link_to "/#{post.id}/choice" do %>
+            <div class = "twocontent">
+              <ul>
+                <li class="one"><%="#{post.content}"%></dt>
+                <li class="two"><%="#{post.post2}"%><br></dt>
+                </ul>
+
+              
+              
+              <div class="overview"><p><%="#{post.overview}"%></p></div>
+              <%="#{post.created_at}"%>
+            </div> 
+              <%end%>
+            <div>
+            <p><%="#{post.user_name}"%></p>
+            </div>
+
+          <div class="deryte">
+            <p><%=button_to("消去","/#{post.id}/destroy2", method: :post, data: { confirm: '本当に削除しますか？' })%></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </span>
+</div>
+
